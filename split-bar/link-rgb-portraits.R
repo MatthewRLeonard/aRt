@@ -48,7 +48,7 @@ img_df_b <- as.data.frame.table(img_array_b) %>%
 
 # rbind all channel data frames
 img_df <- rbind(img_df_r, img_df_g, img_df_b) %>% 
-  `colnames<-`(c("y", "x", "c", "v")) %>% 
+  `colnames<-`(c("y", "x", "v", "c")) %>% 
   distinct(x, y, c, v) %>% 
   mutate(
     across(c(x, y, v), as.numeric),
